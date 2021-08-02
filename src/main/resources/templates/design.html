@@ -14,17 +14,17 @@
               th:errors="*{ingredients}"
               th:if="${#fields.hasErrors('ingredients')}"></span>
     <div class="grid">
-        <div class="ingredient-group" id="wraps">
-            <h3>Designate your wrap:</h3>
-            <div th:each="ingredient : ${wrap}">
+        <div class="ingredient-group" id="doughs">
+            <h3>Designate your dough:</h3>
+            <div th:each="ingredient : ${dough}">
                 <input name="ingredients" th:value="${ingredient.id}" type="checkbox"/>
                 <span th:text="${ingredient.name}"></span><br/>
             </div>
         </div>
 
-        <div class="ingredient-group" id="proteins">
-            <h3>Pick your protein:</h3>
-            <div th:each="ingredient : ${protein}">
+        <div class="ingredient-group" id="meats">
+            <h3>Pick your meat:</h3>
+            <div th:each="ingredient : ${meat}">
                 <input name="ingredients" th:value="${ingredient.id}" type="checkbox"/>
                 <span th:text="${ingredient.name}"></span><br/>
             </div>
@@ -41,14 +41,6 @@
         <div class="ingredient-group" id="veggies">
             <h3>Determine your veggies:</h3>
             <div th:each="ingredient : ${veggies}">
-                <input name="ingredients" th:value="${ingredient.id}" type="checkbox"/>
-                <span th:text="${ingredient.name}"></span><br/>
-            </div>
-        </div>
-
-        <div class="ingredient-group" id="sauces">
-            <h3>Select your sauce:</h3>
-            <div th:each="ingredient : ${sauce}">
                 <input name="ingredients" th:value="${ingredient.id}" type="checkbox"/>
                 <span th:text="${ingredient.name}"></span><br/>
             </div>
