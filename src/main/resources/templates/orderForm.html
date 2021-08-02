@@ -10,7 +10,7 @@
 <form method="POST" th:action="@{/orders}" th:object="${order}">
     <h1>Order your pizza creations!</h1>
 
-    <img th:src="@{/images/PizzaCloud.png}"/>
+    <a th:href="@{/}"><img th:src="@{/images/PizzaCloud.png}"/></a>
     <a id="another" th:href="@{/design}">Design another pizza</a><br/>
 
     <div th:if="${#fields.hasErrors()}">

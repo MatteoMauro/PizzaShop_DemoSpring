@@ -34,11 +34,13 @@ public class JdbcPizzaRepository implements PizzaRepository {
 
     private long savePizzaInfo(Pizza pizza) {
         pizza.setCreatedAt(new Date());
-        PreparedStatementCreator psc =
-            new PreparedStatementCreatorFactory(
-                "insert into Pizza (name, createdAt) values (?, ?)",
-                Types.VARCHAR, Types.TIMESTAMP
-            ).newPreparedStatementCreator(
+        PreparedStatementCreatorFactory pscFactory =
+                new PreparedStatementCreatorFactory(
+                        "insert into Pizza (name, createdAt) values (?, ?)",
+                        Types.VARCHAR, Types.TIMESTAMP
+                );
+        pscFactory.setReturnGeneratedKeys(true);
+        PreparedStatementCreator psc = pscFactory.newPreparedStatementCreator(
                 Arrays.asList(pizza.getName(), new Timestamp(pizza.getCreatedAt().getTime())));
         KeyHolder keyHolder = new GeneratedKeyHolder();
         jdbc.update(psc, keyHolder);
@@ -47,7 +49,7 @@ public class JdbcPizzaRepository implements PizzaRepository {
 
     private void saveIngredientToPizza(Ingredient ingredient, long pizzaId) {
         jdbc.update(
-            "insert into Pizza_Ingredients (pizza, ingredient) " + "values (?, ?)",
-            pizzaId, ingredient.getId());
+                "insert into Pizza_Ingredients (pizza, ingredient) " + "values (?, ?)",
+                pizzaId, ingredient.getId());
     }
 }
