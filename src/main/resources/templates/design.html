@@ -9,10 +9,10 @@
 <h1>Design your pizza!</h1>
 <a th:href="@{/}"><img th:src="@{/images/PizzaCloud.png}"/></a>
 
-<form method="POST" th:object="${pizza}">
-        <span class="validationError"
-              th:errors="*{ingredients}"
-              th:if="${#fields.hasErrors('ingredients')}"></span>
+<form method="POST" th:action="@{/design}" th:object="${pizza}">
+    <span class="validationError"
+          th:errors="*{ingredients}"
+          th:if="${#fields.hasErrors('ingredients')}"></span>
     <div class="grid">
         <div class="ingredient-group" id="doughs">
             <h3>Designate your dough:</h3>

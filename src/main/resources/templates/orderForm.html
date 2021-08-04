@@ -21,38 +21,38 @@
 
     <h3>Deliver my pizza masterpieces to...</h3>
     <label for="name">Name: </label>
-    <input th:field="*{name}" type="text"/>
+    <input th:field="*{deliveryName}" type="text"/>
     <span class="validationError"
-          th:errors="*{name}"
-          th:if="${#fields.hasErrors('name')}">Name Error</span>
+          th:errors="*{deliveryName}"
+          th:if="${#fields.hasErrors('deliveryName')}">Name Error</span>
     <br/>
 
     <label for="street">Street address: </label>
-    <input th:field="*{street}" type="text"/>
+    <input th:field="*{deliveryStreet}" type="text"/>
     <span class="validationError"
-          th:errors="*{street}"
-          th:if="${#fields.hasErrors('street')}">Street Error</span>
+          th:errors="*{deliveryStreet}"
+          th:if="${#fields.hasErrors('deliveryStreet')}">Street Error</span>
     <br/>
 
     <label for="city">City: </label>
-    <input th:field="*{city}" type="text"/>
+    <input th:field="*{deliveryCity}" type="text"/>
     <span class="validationError"
-          th:errors="*{city}"
-          th:if="${#fields.hasErrors('city')}">City Error</span>
+          th:errors="*{deliveryCity}"
+          th:if="${#fields.hasErrors('deliveryCity')}">City Error</span>
     <br/>
 
     <label for="state">State: </label>
-    <input th:field="*{state}" type="text"/>
+    <input th:field="*{deliveryState}" type="text"/>
     <span class="validationError"
-          th:errors="*{state}"
-          th:if="${#fields.hasErrors('state')}">State Error</span>
+          th:errors="*{deliveryState}"
+          th:if="${#fields.hasErrors('deliveryState')}">State Error</span>
     <br/>
 
     <label for="zip">Zip code: </label>
-    <input th:field="*{zip}" type="text"/>
+    <input th:field="*{deliveryZip}" type="text"/>
     <span class="validationError"
-          th:errors="*{zip}"
-          th:if="${#fields.hasErrors('zip')}">Zip Error</span>
+          th:errors="*{deliveryZip}"
+          th:if="${#fields.hasErrors('deliveryZip')}">Zip Error</span>
     <br/>
 
     <h3>Here's how I'll pay...</h3>
